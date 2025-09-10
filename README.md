@@ -4,6 +4,8 @@ This is the backend server for a YouTube-like application. It powers user authen
 
 The backend is built with **Node.js + Express** and uses **MongoDB** for storage. Authentication is handled with **JWT**, and video files are stored in **cloud storage (e.g., AWS S3 / GCP / local storage)**.  
 
+🌍 **Live Backend Server:** [YouTube Backend Live](https://youtube-clone-be-final.onrender.com/)
+
 ---
 
 ## 🚀 Features
@@ -45,7 +47,7 @@ backend/
 │
 │── .env.example       # Example env variables
 │── server.js          # App entry point
-│── seedData.js        # for adding data in db first timet
+│── seedData.js        # for adding data in db first time
 │── package.json
 ```
 
@@ -71,10 +73,15 @@ Create a `.env` file in the root directory based on `.env.example`:
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/youtube
 JWT_SECRET=your_jwt_secret
-CLOUD_STORAGE=local   # or s3, gcp, cloudinary
 ```
 
-### 4️⃣ Run the Server
+### 4️⃣ Populate the Database (First Time Only)
+Run the seed script to add initial data into MongoDB:
+```bash
+node seedData.js
+```
+
+### 5️⃣ Run the Server
 ```bash
 npm run dev   # with nodemon
 npm start     # production mode
@@ -86,16 +93,16 @@ Server will run at: **http://localhost:5000**
 
 ## 📡 API Endpoints (Sample)
 
-| Method | Endpoint             | Description                  |
-|--------|----------------------|------------------------------|
-| POST   | `/api/auth/signup`   | Register a new user          |
-| POST   | `/api/auth/login`    | Login & get JWT              |
-| GET    | `/api/videos`        | Fetch all videos             |
-| POST   | `/api/videos/upload` | Upload a new video           |
-| GET    | `/api/videos/:id`    | Stream a video by ID         |
-| POST   | `/api/videos/:id/like` | Like a video               |
-| POST   | `/api/videos/:id/dislike` | Dislike a video         |
-| POST   | `/api/comments/:id`  | Add a comment to a video     |
+| Method | Endpoint               | Description                  |
+|--------|------------------------|------------------------------|
+| POST   | `/api/auth/signup`     | Register a new user          |
+| POST   | `/api/auth/login`      | Login & get JWT              |
+| GET    | `/api/videos`          | Fetch all videos             |
+| POST   | `/api/videos/upload`   | Upload a new video           |
+| GET    | `/api/videos/:id`      | Stream a video by ID         |
+| POST   | `/api/videos/:id/like` | Like a video                 |
+| POST   | `/api/videos/:id/dislike` | Dislike a video            |
+| POST   | `/api/comments/:id`    | Add a comment to a video     |
 
 ---
 
