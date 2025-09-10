@@ -42,9 +42,10 @@ backend/
 │   ├── routes/        # Express routes
 │   ├── services/      # Business logic
 │   └── utils/         # Helpers & utilities
-│── uploads/           # (if storing locally)
+│
 │── .env.example       # Example env variables
 │── server.js          # App entry point
+│── seedData.js        # for adding data in db first timet
 │── package.json
 ```
 
@@ -54,7 +55,7 @@ backend/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/youtube-backend.git
+git clone https://github.com/vjbravo123/Youtube-clone-BE-final.git
 cd youtube-backend
 ```
 
